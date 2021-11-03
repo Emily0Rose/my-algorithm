@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void) {
+  int original, reverse = 0;
+
+  scanf("%d", &original);
+
+  while(original) {
+    reverse *= 10; //reverseを十倍する
+    reverse += original % 10; //originalの一の位
+    original /= 10; //originalの一の位消去
+  }
+
+  printf("%d\n", reverse);
+  return 0;
+}

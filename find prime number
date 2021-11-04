@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+  //jが素数かどうか調べる
+  int j;
+  scanf("%d", &j);
+  for(int i = 2; i * i <= j; i++) {
+    if(j % i == 0) {
+      return 0; //偽
+    }
+  }
+  return 1; //真
+}

@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int Fibo(int n) { //フィボナッチ数列の第n項を求める関数
+  // nは自然数
+
+  if(n == 1 || n == 2) {
+    return 1;
+  }
+  else {
+    return Fibo(n-1) + Fibo(n-2);
+  }
+}
+
+int main() {
+  int a;
+  scanf("%d", &a);
+
+  printf("%d\n", Fibo(a));
+
+  return 0;
+}

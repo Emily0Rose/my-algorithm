@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+void hanoi(int n, int start, int temp, int goal) {
+  if(n == 1) {
+    //start -> gaol
+    printf("%d-%d\n", start, goal);
+  }
+  else {
+    //start -> temp
+    hanoi(n-1, start, goal, temp);
+
+    //一番下の皿の移動
+    printf("%d-%d\n", start, goal);
+
+    //temp -> goal
+    hanoi(n-1, temp, start, goal);
+  }
+  
+  
+
+  return;
+}
+
+int main(void) {
+  hanoi(5, 1, 2, 3);
+  return 0;
+}

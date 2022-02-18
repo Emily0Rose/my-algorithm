@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main(void) {
+	char c;
+	int Am, An, Bm, Bn; //m*n matrix
+	int A[10][10] = {0}; //m,n <= 10
+	int B[10][10] = {0};
+	int AB[10][10] = {0};
+
+	printf("行列Aは●×●行列：");
+	scanf("%d %d", &Am, &An);
+	printf("行列Bは●×●行列：");
+	scanf("%d %d", &Bm, &Bn);
+
+	puts("");
+
+	//A
+	printf("行列Aを入力：\n");
+	for(int i = 0; i < Am; i++) {
+		for(int j = 0; j < An; j++) {
+			scanf("%d", &A[i][j]);
+		}
+	}
+
+	puts("");
+
+	//B
+	printf("行列Bを入力：\n");
+	for(int i = 0; i < Bm; i++) {
+		for(int j = 0; j < Bn; j++) {
+			scanf("%d", &B[i][j]);
+		}
+	}
+
+	puts("");
+
+	//AB
+	for(int i = 0; i < Am; i++) {
+		for(int j = 0; j < Bn; j++) {
+			int ans = 0;
+			for(int k = 0; k < An; k++) {
+				ans += A[i][k] * B[k][j];
+			}
+			AB[i][j] = ans;
+		}
+	}
+
+	//print AB
+	printf("行列ABは\n");
+	for(int i = 0; i < Am; i++) {
+		for(int j = 0; j < Bn; j++) {
+			printf("%d ", AB[i][j]);
+			if(j == Bn-1) puts("");
+		}
+		
+	}
+
+  return 0;
+}
